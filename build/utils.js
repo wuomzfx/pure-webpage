@@ -5,6 +5,19 @@ var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
+
+exports.getAssetsPublicPath = function () {
+  if (!process.env.NODE_ENV === 'production') {
+    return config.dev.assetsPublicPath
+  }
+  if (!!process.argv.find(a => a.indexOf('dxybuild') > -1)) {
+    const projectName = process.cwd().split(path.sep).pop()
+    return config.build.assetsDxyPath
+  } else {
+    return config.build.assetsPublicPath
+  }
+}
+
 /**
  * @param { string } _path - filename and path of assets
  * @param { boolean } innerHtml - is the asset required in html file, for checking assetsVersionMode
@@ -13,7 +26,7 @@ exports.assetsPath = function (_path, innerHtml) {
   var envConfig = process.env.NODE_ENV === 'production' ? config.build : config.dev
   var assetsSubDirectory = envConfig.assetsSubDirectory
   if (innerHtml && envConfig.assetsVersionMode !== 'hash') {
-    _path = _path.split('.').filter(p => p.indexOf('hash]') === -1).join('.')
+    _path = _path.split('.').filter(p => p.indexOf('[hash') === -1 && p.indexOf('hash]') === -1).join('.')
     _path += `?v=${envConfig.assetsVersionMode}`
   }
   return path.posix.join(assetsSubDirectory, _path)

@@ -8,6 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "node index.js",
     "build": "node build/build.js",
+    "dxybuild:prod": "node build/build.js --dxybuild",
     "lint": "eslint --ext .js, src",
     "fix": "eslint --fix .js, src"
   },
