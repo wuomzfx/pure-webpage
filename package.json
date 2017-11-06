@@ -1,6 +1,6 @@
 {
   "name": "pure-webpage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "pure scaffold for developing web page",
   "author": "xiangxuezhang <75851654@qq.com>",
   "private": true,
@@ -38,7 +38,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
-    "extract-text-webpack-plugin": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.1",
     "friendly-errors-webpack-plugin": "^1.1.3",
     "glob": "^7.1.2",
@@ -57,10 +57,10 @@
     "shelljs": "^0.7.6",
     "style-loader": "0.18.2",
     "url-loader": "^0.5.8",
-    "webpack": "^2.6.1",
-    "webpack-bundle-analyzer": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.0",
-    "webpack-hot-middleware": "^2.18.0",
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
