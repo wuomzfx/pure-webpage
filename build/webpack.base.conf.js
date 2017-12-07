@@ -49,7 +49,7 @@ module.exports = {
             issuer: /\.html$/,
             loader: 'url-loader',
             options: {
-              limit: 10000,
+              limit: 1, // 为了让后端好套页面，html内引入的资源文件一律不使用base64
               name: utils.assetsPath('img/[name].[hash:7].[ext]', true)
             }
           },
