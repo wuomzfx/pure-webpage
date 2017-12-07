@@ -9,8 +9,8 @@ module.exports = {
   },
   build: {
     // assetsVersionMode: '{{$assetVersion}}', // version control by server
-    // assetsVersionMode: +new Date(), // timestamp version
-    assetsVersionMode: 'hash', // hash version
+    assetsVersionMode: +new Date(), // timestamp version
+    // assetsVersionMode: 'hash', // hash version
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
